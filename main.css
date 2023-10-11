@@ -1,5 +1,11 @@
+a:visited {
+    color:purple
+}
+
+
 #body {
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
@@ -13,8 +19,23 @@ a:link {
 
 h1 {
     text-shadow: 2px 2px #ff0000;
+    font: 4em sans-serif;
+    ;
 }
 
 h2 {
     text-shadow: 2px 2px #ff0000;
+}
+
+table {
+    border-radius: 1cqi;
+
+}
+
+#txt:focus {
+    background-color: cadetblue;
+}
+
+p:nth-of-type(2n) {
+    background-color: cornflowerblue;
 }
