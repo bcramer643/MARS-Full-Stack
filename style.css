@@ -1,0 +1,25 @@
+button {
+    margin: 0 .20em;
+    padding: 0.4em 1vb;
+    background-color: cornflowerblue;
+    font-size: large;
+
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+h1 {
+    background-color: bisque;
+    text-transform: uppercase;
+}
+
+.content {
+    height: 240px;
+    width: 500px;
+    background-color: aqua;
+    padding: 20px;
+    margin: 0, auto;
+
+}
