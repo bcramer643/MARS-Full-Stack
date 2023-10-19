@@ -18,5 +18,7 @@ function count_letters(str) {
 }
 
 
-let test_str = "JavaScript is fun to learn but sometimes confusing.";
-count_letters(test_str);
+let test_str = "JavaScript is fun to learn but sometimes confusing";
+count_letters(test_str.replace(/ /g,''));
+
+
