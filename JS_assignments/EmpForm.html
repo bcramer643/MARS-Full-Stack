@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./EmpStyle.css">
+    <title>Document</title>
+</head>
+
+<body>
+    ...
+    <main>
+        <form id="myForm" action="" method="GET">
+            <div>
+                <label for="name">Name</label>
+                <input id="name" type="text" />
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" />
+            </div>
+            <div>
+                <label for="exp">Level of Experience</label>
+                <select id="exp">
+                    <option value="intern">Internship</option>
+                    <option value="junior">Junior</option>
+                    <option value="mid">Mid</option>
+                    <option value="senior">Senior</option>
+                    <option value="princ">Principal</option>
+                </select>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>Answer Yes or No</legend>
+                    <input type="radio" name="grid" id="yes" value="yes" />
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="grid" id="no" value="no" />
+                    <label for="no">No</label>
+                </fieldset>
+            </div>
+            
+            <div class="full-width">
+                <button type="button" value="submit" onclick="submit()">Submit</button>
+            </div>
+        </form>
+        <script src="./Emp_JS.js"></script>
+    </main>
+    ...
+</body>
+
+</html>
