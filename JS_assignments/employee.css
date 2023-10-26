@@ -1,0 +1,51 @@
+form {
+    
+    flex-direction: column;
+    background-color:lavender;
+    border-radius: 3px;
+    border-style:outset;
+    padding: 1em;
+    display: flex;
+    max-width:fit-content;
+    min-height: auto;
+}
+
+
+
+.row {
+    display: flex;
+    justify-content:baseline;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.input-group {
+display: flex;
+}
+
+.input-group>label {
+    margin-right: 1em;
+    padding: .5em 0;
+}
+
+form input,
+form select {
+    flex: 6;
+    padding: .5em;
+    margin-bottom: 1em;
+}
+
+
+
+form button {
+    padding: 1em;
+    background: rgb(153, 150, 150);
+    color: white;
+    border: 0;
+}
+
+

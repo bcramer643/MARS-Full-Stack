@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="employee.css">
+    <title>Employee Information</title>
+</head>
+
+<body>
+    <form action="result.html">
+
+        <div class="row">
+            <div class="column">
+                <div class="input-group">
+                    <label for="name">Name </label>
+                    <input id="name">
+                </div>
+                <div class="input-group">
+                    <label for="empId">Empoloyee Id </label>
+                    <input type="number" id="empId">
+                </div>
+                
+                <div class="input-group">
+                    <label for="joiningDate">Joining Date</label>
+                    <input type="date" id="joiningDate">
+                </div>
+                <div>
+                    <label for="hoursWorked">Hours Worked</label>
+                    <input type="number" id="hoursWorked">
+                </div>
+                <div>
+                <td> <label for="designation">Designation:</label></td>
+                <td><input type="radio" name="designation" id="manager" value="manager"/>Manager</td>
+                <td><input type="radio" name="designation" id="consultant"  value="consultant"/>Consultant</td>
+                <td><input type="radio" name="designation" id="trainee"  value="trainee"/>Trainee</td>
+            </div>
+            
+            </div>
+        </div>
+
+        <div class="row">
+
+            <button id="submit" value="send" onclick="send()">Submit</button>
+
+        </div>
+    </form>
+
+    <script type="text/javascript" src="employee.js"></script>
+
+</body>
+
+</html>
