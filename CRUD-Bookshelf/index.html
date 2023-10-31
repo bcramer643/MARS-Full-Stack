@@ -8,7 +8,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
@@ -23,21 +22,21 @@
                 <div class="card">
                     <div class="card-body">
                         <form id="form">
-                            <input type="hidden" name="id" id="inputBookId">
-                            <label for="inputBookTitle">Title</label>
-                            <input type="text" placeholder="Title" class="form-control" id="inputBookTitle" required>
+                            <input type="hidden" name="id" id="bookId">
+                            <label for="bookTitle">Title</label>
+                            <input type="text" placeholder="Title" class="form-control" id="bookTitle" required>
                             <br>
-                            <label for="inputBookAuthor">Author</label>
-                            <input type="text" placeholder="Author" class="form-control" id="inputBookAuthor" required>
+                            <label for="bookAuthor">Author</label>
+                            <input type="text" placeholder="Author" class="form-control" id="bookAuthor" required>
                             <br>
-                            <label for="inputBookYear">Year</label>
-                            <input type="number" placeholder="YYYY" class="form-control" id="inputBookYear" required>
+                            <label for="bookYear">Year</label>
+                            <input type="number" placeholder="Year" class="form-control" id="bookYear" required>
                             <br>
-                            <label for="inputBookIsComplete">Finished reading</label>
-                            <input id="inputBookIsComplete" type="checkbox">
+                            <label for="bookIsComplete">Finished reading</label>
+                            <input id="bookIsComplete" type="checkbox">
                             <br>
                             <br>
-                            <button class="btn btn-sm btn-primary" type="button" onclick="allData()">Save</button>
+                            <button class="btn btn-sm btn-primary" type="button" onclick="save()">Save</button>
                             <button class="btn btn-sm btn-primary" type="button" onclick="clearData()">Reset</button>
                         </form>
                     </div>
@@ -47,7 +46,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h2>Unread</h2>
-                        <div>
+                        <div class="table-responsive">
                             <table id="datatable" class="table table-striped">
                                 <thead>
                                     <tr>
@@ -67,14 +66,14 @@
                         </div>
                         <hr>
                         <h2>Read</h2>
-                        <div>
+                        <div class="table-responsive">
                             <table id="datatable" class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>No</th>
                                         <th>Title</th>
                                         <th>Author</th>
-                                        <th>Year</th>
+                                        <th>Tahun</th>
                                         <th>Unread</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
@@ -90,8 +89,18 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
-
+    <script>
+        allData()
+    </script>
+    <script>
+        function clearData() {
+            document.getElementById('form').reset()
+            document.getElementById('id').value = ""
+        }
+    </script>
 </body>
 
 </html>
