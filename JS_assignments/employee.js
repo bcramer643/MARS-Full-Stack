@@ -1,5 +1,5 @@
-function send() {
-
+$(function () {
+    send()
     class Employee {
 
         constructor(name, empId, hoursWorked, joiningDate, designation) {
@@ -11,7 +11,7 @@ function send() {
 
         }
         calcSalary() {
-            if (this.designationesignation == "manager") {
+            if (this.designation == "manager") {
 
                 return this.hoursWorked * 90;
 
@@ -57,27 +57,28 @@ function send() {
     }
 
     let info = {
-        name: document.getElementById("name").value,
-        empId: document.getElementById("empId").value,
-        hoursWorked: document.getElementById("hoursWorked").value,
-        designation: document.querySelector('input[type=radio]:checked').value,
+        name: $("#name").val(),
+        empId: $("#empId").val(),
+        hoursWorked: $("#hoursWorked").val(),
+        designation: $('input[type=radio]:checked').val()
     }
 
-    let emp1 = new Employee(details.name, info.designation, details.hoursWorked)
-    var empSalary = (emp1.getsalary());
+    let emp1 = new Employee(info.name, info.designation, info.hoursWorked)
+    var empSalary = (emp1.calcSalary());
 
-    let manager1 = new Manager(details.name, info.designation, details.hoursWorked)
-    var empSalary = (manager1.getsalary());
+    let manager1 = new Manager(info.name, info.designation, info.hoursWorked)
+    var empSalary = (manager1.calcSalary());
 
-    let consultant1 = new Consultant(details.name, info.designation, details.hoursWorked)
-    var empSalary = (consultant1.getsalary());
+    let consultant1 = new Consultant(info.name, info.designation, info.hoursWorked)
+    var empSalary = (consultant1.calcSalary());
 
-    let trainee1 = new Trainee(details.name, info.designation, details.hoursWorked)
-    var empSalary = (trainee1.getsalary());
+    let trainee1 = new Trainee(info.name, info.designation, info.hoursWorked)
+    var empSalary = (trainee1.calcSalary());
 
     alert("send")
 
-    let textValue = "Employee: " + "      "+ info.name + "   " + "Designation: " +"     "+ info.designation + "Salary: " + empSalary;
+    let textValue = "Employee: " + "      "+ info.name + "   " + "Designation: " +"     "+ info.designation + "Salary: " + info.empSalary;
     localStorage.setItem("itemValue", textValue)
 
-};
+});
+
