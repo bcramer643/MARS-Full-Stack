@@ -63,10 +63,9 @@ function allData() {
     table.innerHTML = ``
     bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
     bookList.forEach(function (value, i) {
-
-        var table = document.getElementById('table')
-        // if(value.isComplete == 0){
-        table.innerHTML += `
+        if (value.isComplete == 0) {
+            var table = document.getElementById('table')
+            table.innerHTML += `
             <tr>
                 <td>${i + 1}</td>
                 <td>${value.title}</td>
@@ -85,9 +84,9 @@ function allData() {
                         <i class="fa fa-trash"></i>
                     </button>
                 </td>
-            </tr>`
-        // }
-
+            </tr>
+            `
+        }
     })
     table2.innerHTML = ``
     bookList2 = JSON.parse(localStorage.getItem('listItem3')) ?? []
@@ -95,9 +94,10 @@ function allData() {
     bookList2.forEach(function (value2, i) {
 
         var table2 = document.getElementById('table2')
-        // console.log(value2.isComplete);
-        // if(value2.isComplete == 1){
-        table2.innerHTML += `
+        console.log(value2.isComplete);
+        if (value2.isComplete == 1) {
+
+            table2.innerHTML += `
             <tr>
                 <td>${i + 1}</td>
                 <td>${value2.title}</td>
@@ -117,9 +117,85 @@ function allData() {
                     </button>
                 </td>
             </tr>`
-        // }
 
+        }
     })
 
 }
 
+function removeData3(id) {
+
+    bookList = JSON.parse(localStorage.getItem('listItem3')) ?? []
+    bookList = bookList.filter(function (value) {
+        return value.id != id;
+    });
+    //localStorage.clear();
+    localStorage.setItem('listItem3', JSON.stringify(bookList))
+    allData()
+}
+function removeData4(id) {
+    bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
+    bookList = bookList.filter(function (value) {
+        return value.id != id;
+    });
+    localStorage.setItem('listItem4', JSON.stringify(bookList))
+    allData()
+}
+
+function find(id) {
+    bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
+    bookList.forEach(function (value) {
+        if (value.id == id) {
+            console.log(id);
+            document.getElementById('bookId').value = id
+            document.getElementById('bookTitle').value = value.title
+            document.getElementById('bookAuthor').value = value.author
+            document.getElementById('bookYear').value = value.year
+        }
+    })
+}
+
+function read(id1, title1, author1, year1) {
+    if (id1) {
+        var item = [{
+            id: id1,
+            title: title1,
+            author: author1,
+            year: year1,
+            isComplete: 1,
+        }];
+        bookList = JSON.parse(localStorage.getItem('listItem3')) ?? []
+        books = item.concat(bookList);
+        var itemString = JSON.stringify(books);
+        localStorage.setItem('listItem3', itemString);
+    }
+
+    bookList4 = JSON.parse(localStorage.getItem('listItem4')) ?? []
+    bookList4 = bookList4.filter(function (value) {
+        return value.id != id1;
+    });
+    localStorage.setItem('listItem4', JSON.stringify(bookList4))
+    allData()
+}
+function read2(id1, title1, author1, year1) {
+    if (id1) {
+        var item = [{
+            id: id1,
+            title: title1,
+            author: author1,
+            year: year1,
+            isComplete: 1,
+        }];
+        bookList = JSON.parse(localStorage.getItem('listItem4')) ?? []
+        books = item.concat(bookList);
+        var itemString = JSON.stringify(books);
+        localStorage.setItem('listItem4', itemString);
+    }
+
+    bookList3 = JSON.parse(localStorage.getItem('listItem3')) ?? []
+    bookList3 = bookList3.filter(function (value) {
+        return value.id != id1;
+    });
+    localStorage.setItem('listItem3', JSON.stringify(bookList3))
+    allData()
+}
